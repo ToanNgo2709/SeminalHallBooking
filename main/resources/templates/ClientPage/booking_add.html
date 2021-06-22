@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/_layoutClient}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="booking-form">
+			<form th:action="@{/booking/add}" method="post" th:object = "${newBooking}">
+				<div class="row">
+					<div class="col-md-4">
+						<label for="username">Username:</label> <input type="text"
+							class="form-control" id="username" name="username" />
+					</div>
+					<div class="col-md-4">
+						<label for="session">Session:</label> <br /> <select id="session"
+							name="session" th:field="*{session}">
+							<option value="">-- Select Session --</option>
+							<option th:value="morning">Morning</option>
+							<option th:value="afternoon">Afternoon</option>
+							<option th:value="allday">All Day</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<label for="fromDate">From Date:</label> <input type="date"
+							class="form-control" th:field="*{fromDate}" id="fromDate" name="fromDate" />
+					</div>
+					<div class="col-md-4">
+						<label for="username">To Date:</label> <input type="date"
+							class="form-control" th:field="*{toDate}" id="toDate" name="toDate" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<label for="approNumber">Approval Number:</label> <input
+							type="text" class="form-control" id="approNumber"
+							th:field="*{approvalNumber}" name="approNumber" />
+					</div>
+					<div class="col-md-4">
+						<label for="approDate">Approval Date:</label> <input type="date"
+							class="form-control" th:field="*{approvalDate}" id="approDate" name="approDate" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<label for="session">Hall:</label> <br /> <select id="session"
+							name="session" th:field="*{hall}">
+							<option value="">-- Select Hall --</option>
+							<option th:each="hall : ${hallList}" th:text="${hall.name}" th:value="${hall.id}"></option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<label for="purpose">Purpose:</label> <input type="text"
+							class="form-control" th:field="*{purpose}" id="purpose" name="purpose" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<label for="numPerson">Number Of Person:</label> <input
+							type="text" class="form-control" th:field="*{numberOfPerson}" id="numPerson" name="numPerson" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-success">Book</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

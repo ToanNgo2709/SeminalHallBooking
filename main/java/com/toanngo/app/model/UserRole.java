@@ -31,4 +31,46 @@ public class UserRole {
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "userRole")
 	private Set<RoleAction> roleActions = new HashSet<>();
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public Set<UserInfo> getUserInfos() {
+		return userInfos;
+	}
+
+	public void setUserInfos(Set<UserInfo> userInfos) {
+		this.userInfos = userInfos;
+	}
+
+	public Set<RoleAction> getRoleActions() {
+		return roleActions;
+	}
+
+	public void setRoleActions(Set<RoleAction> roleActions) {
+		this.roleActions = roleActions;
+	}
+	
+	
 }

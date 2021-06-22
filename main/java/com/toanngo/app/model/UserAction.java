@@ -28,4 +28,38 @@ public class UserAction {
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "userAction")
 	private Set<RoleAction> roleActions = new HashSet<>();
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getActionUrl() {
+		return actionUrl;
+	}
+
+	public void setActionUrl(String actionUrl) {
+		this.actionUrl = actionUrl;
+	}
+
+	public String getActionLink() {
+		return actionLink;
+	}
+
+	public void setActionLink(String actionLink) {
+		this.actionLink = actionLink;
+	}
+
+	public Set<RoleAction> getRoleActions() {
+		return roleActions;
+	}
+
+	public void setRoleActions(Set<RoleAction> roleActions) {
+		this.roleActions = roleActions;
+	}
+	
+	
 }

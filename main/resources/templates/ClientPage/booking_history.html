@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/_layoutClient}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div layout:fragment = "content">
+		<br />
+		<h1 th:text = "'Booking History of: ' + ${session.id}"></h1>
+		<br />
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>From Date</th>
+					<th>To Date</th>
+					<th>Session</th>
+					<th>Approval Date</th>
+					<th>Hall</th>
+					<th>Purpose</th>			
+					<th>Approved ?</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="booking : ${bookingList}">
+					<td th:text="${booking.id}"></td>
+					<td th:text="${booking.fromDate}"></td>
+					<td th:text="${booking.toDate}"></td>
+					<td th:text="${booking.session}"></td>
+					<td th:text="${booking.approvalDate}"></td>
+					<td th:text="${booking.hall.name}"></td>
+					<td th:text="${booking.purpose}"></td>			
+					<td th:text="${booking.approveStatus}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

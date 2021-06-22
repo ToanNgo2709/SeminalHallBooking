@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+
+body{
+	display: flex;
+	justify-content: center;
+}
+
+.mainContent{
+	background-color: #005A9C;
+	color: white;
+	margin: 150px;
+	width: 35%;
+	height: auto;
+	border: 1px solid black;
+	border-radius: 25px;
+	padding: 20px;
+	display:flex;
+	box-shadow: 10px 10px 5px grey;
+}
+
+.mainContent button{
+	font-weight: 700;
+	
+}

@@ -28,4 +28,38 @@ public class Department {
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
 	private Set<UserInfo> userInfos = new HashSet<>();
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public Set<UserInfo> getUserInfos() {
+		return userInfos;
+	}
+
+	public void setUserInfos(Set<UserInfo> userInfos) {
+		this.userInfos = userInfos;
+	}
+	
+	
 }

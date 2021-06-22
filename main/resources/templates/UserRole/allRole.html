@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/_layoutAdmin}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<br />
+		<h1>User Role List</h1>
+		<a class="btn btn-info" href="">Create New Role</a>
+		<br />
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Role</th>
+					<th>Active</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="role : ${roleList}">
+					<td th:text="${role.id}"></td>
+					<td th:text="${role.name}"></td>
+					<td th:text="${role.active}"></td>
+					<td>
+						<a class="btn btn-primary" href="">Edit</a>
+						<a class="btn btn-danger" href="">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

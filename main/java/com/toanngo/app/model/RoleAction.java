@@ -24,4 +24,36 @@ public class RoleAction {
 	@ManyToOne
 	@JoinColumn(name = "action_id")
 	private UserAction userAction;
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
+
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
+	}
+
+
+	public UserAction getUserAction() {
+		return userAction;
+	}
+
+
+	public void setUserAction(UserAction userAction) {
+		this.userAction = userAction;
+	}
+	
+	
 }
